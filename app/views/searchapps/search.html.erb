@@ -1,0 +1,22 @@
+
+
+<h2><%= link_to 'Upload', new_searchapp_path %></h2>
+
+
+
+
+
+
+
+
+
+<DIV ALIGN=CENTER>
+ <%= form_tag searchapps_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :size => "75" %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+</DIV>
+<br />
+

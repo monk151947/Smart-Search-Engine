@@ -1,0 +1,36 @@
+<%= form_for(@searchapp) do |f| %>
+  <% if @searchapp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@searchapp.errors.count, "error") %> prohibited this searchapp from being saved:</h2>
+
+      <ul>
+      <% @searchapp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :file_name %><br />
+    <%= f.text_field :file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+
+<%= f.fields_for :assets do |asset_fields| %>
+<%= render 'asset_fields', f: asset_fields %>
+<%#= asset_fields.file_field :asset %>
+
+<% end %>
+ <%= link_to_add_fields "Add files", f, :assets %>
+<br />
+<br />
+  <div>
+
+    <%= button_to 'Submit', class: "btn btn-primary", method: :post %>
+  </div>
+<% end %>
+

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>File name:</b>
+  <%= @searchapp.file_name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @searchapp.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_searchapp_path(@searchapp) %> |
+<%= link_to 'Back', searchapps_path %>
