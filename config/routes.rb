@@ -1,4 +1,6 @@
 SmartSearch::Application.routes.draw do
+  get "dropbox/index"
+
   resources :searchapps
 
   # The priority is based upon order of creation:
