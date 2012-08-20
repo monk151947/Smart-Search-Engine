@@ -1,4 +1,4 @@
-classclass SearchappsController < ApplicationController
+class SearchappsController < ApplicationController
   require 'yomu'
 
   def index
@@ -67,6 +67,5 @@ classclass SearchappsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 end
 
